@@ -4,28 +4,40 @@ body {
   background-color: #f4f4f4;
 }
 
-.nav {
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.section {
+  padding-inline: 0;
+  margin-inline: 0;
+}
+.section.nav-section .nav {
   position: relative;
   z-index: 1000;
   padding: 3.125rem 5rem;
 }
-.nav__wrapper {
+.section.nav-section .nav__wrapper {
   display: grid;
   grid-template-columns: 10rem 1fr repeat(6, auto) 1fr repeat(1, auto);
   align-items: center;
-  margin-inline: auto;
+  margin: 0 auto;
 }
-
-.logo {
-  grid-column: 1;
+.section.nav-section .logo {
   width: 10rem;
   height: 1.375rem;
 }
-.logo path {
+.section.nav-section .logo path {
   fill: #fff;
 }
-
-.menu {
+.section.nav-section .menu {
   display: grid;
   grid-template-columns: subgrid;
   grid-column: 3/span 6;
@@ -33,7 +45,7 @@ body {
   margin-block: 0;
   list-style: none;
 }
-.menu__items {
+.section.nav-section .menu__items {
   display: grid;
   align-items: center;
   padding-right: 3.75rem;
@@ -42,80 +54,130 @@ body {
   text-decoration: none;
   text-transform: uppercase;
 }
-.menu__items:hover {
-  color: #fff;
+.section.nav-section .menu__items:hover {
   text-decoration: underline;
 }
-
-.menu-right {
+.section.nav-section .menu-right {
   grid-column: -1/-1;
   width: 1.375rem;
   height: 0.4375rem;
 }
-.menu-right circle {
+.section.nav-section .menu-right circle {
   fill: #fff;
 }
-
-.video-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
+.section.nav-section .menu-toggle {
+  display: none;
+  font-size: 16px;
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
 }
-
-.footer {
+.section.home-section {
+  position: relative;
+  margin-top: 100vh;
+  margin-bottom: 8rem;
+}
+.section.home-section .wrapper {
+  max-width: 960px;
+  padding-block: 15vw 8rem;
+  padding-inline: 5.4vw;
+  margin: 0 auto;
+}
+.section.home-section .wrapper .home-intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  list-style: none;
+}
+.section.home-section .wrapper .home-intro li {
+  align-items: center;
+  padding-inline: 10px;
+  cursor: pointer;
+}
+.section.home-section .wrapper .home-intro li a {
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.section.home-section .wrapper .home-intro li a svg {
+  width: 9.6875rem;
+  height: auto;
+}
+.section.home-section .wrapper .home-intro li a span {
+  display: block;
+  margin-block: 2.1875rem;
+  font-size: 0.8125rem;
+  text-align: center;
+}
+.section.footer-section .footer {
   position: fixed;
   bottom: 0;
   align-items: center;
   width: 100%;
+  height: 60px;
   padding: 0.875rem 3.75rem;
   font-size: 0.75rem;
   background-color: #191918;
 }
-.footer__fixed {
+.section.footer-section .footer__fixed {
   display: grid;
   grid-template-columns: 5rem 1fr 62rem 1fr;
   align-items: center;
 }
-.footer__fixed__logo {
+.section.footer-section .footer__fixed__logo {
   width: 2.6875rem;
   height: 0.8125rem;
 }
-.footer__fixed__logo path {
+.section.footer-section .footer__fixed__logo path {
   fill: #fff;
 }
-.footer__fixed__desc {
+.section.footer-section .footer__fixed__desc {
   align-items: center;
   margin: 0;
   color: #fff;
   text-transform: uppercase;
 }
-.footer__fixed__desc p {
+.section.footer-section .footer__fixed__desc p {
   margin: 0;
   line-height: 0.75rem;
 }
-.footer__fixed__btn {
+.section.footer-section .footer__fixed__btn {
   box-sizing: border-box;
   grid-column: 5/-2;
   max-width: 150px;
-  max-height: 100px;
   padding: 0.1rem;
-  overflow: hidden;
   font-weight: 600;
   line-height: 1.75rem;
   color: #fff;
   text-transform: uppercase;
   background-color: transparent;
-  border: 0.1rem solid;
+  border: 0.07rem solid;
   border-radius: 2rem;
 }
-.footer__fixed__close {
+.section.footer-section .footer__fixed__close {
   grid-column: 6/-1;
   width: 0.75rem;
   height: 0.75rem;
 }
-.footer__fixed__close path {
+.section.footer-section .footer__fixed__close path {
   fill: #fff;
+}
+
+@media (width <= 1280px) {
+  .logo {
+    width: 8.5625rem;
+    height: 1.125rem;
+  }
+  .menu__items,
+  .menu-right {
+    display: none;
+  }
+  .menu-toggle {
+    display: block;
+    grid-column: -1/-1;
+    text-align: right;
+  }
+  .footer__fixed__desc {
+    font-size: 0.625rem;
+  }
 }
