@@ -1,6 +1,6 @@
 @import 'https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap';
 body {
-  font-family: 'Hanken Grotesk', sans-serif;
+  font-family: "Hanken Grotesk", sans-serif;
   color: #252422;
   background-color: #f4f4f4;
 }
@@ -11,7 +11,7 @@ body {
   z-index: 1001;
   pointer-events: none;
   visibility: visible;
-  background-image: url('https://i.ibb.co/x3TCktM/645cbb8ec449398255b76326-noise.gif');
+  background-image: url("https://i.ibb.co/x3TCktM/645cbb8ec449398255b76326-noise.gif");
   background-position: 0 0;
   background-size: auto;
   opacity: 0.035;
@@ -26,13 +26,13 @@ a {
 .divider {
   margin-top: 8rem;
   margin-bottom: 8rem;
-  border-top: 1px solid #000;
+  border-top: 1px solid #252422;
 }
 .divider-short {
   margin-top: 1rem;
-  margin-right: 90%;
+  margin-right: 94%;
   margin-bottom: 6rem;
-  border-top: 2px solid #000;
+  border-top: 2px solid #252422;
 }
 
 figure path {
@@ -61,7 +61,7 @@ figure path {
 .section-nav .menu {
   display: grid;
   grid-template-columns: subgrid;
-  grid-column: 3 / span 6;
+  grid-column: 3/span 6;
   padding-left: 0;
   margin-block: 0;
   list-style: none;
@@ -121,7 +121,7 @@ figure path {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
 }
 .section #home-intro .intro-item {
   display: flex;
@@ -169,38 +169,151 @@ figure path {
   text-transform: uppercase;
   word-wrap: break-word;
 }
-.section #home-overview .wrapper {
-  display: flex;
-  align-items: center;
+.section #home-overview .overview-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-block: 5rem 5rem;
 }
-.section #home-overview .wrapper .overview-body {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-}
-.section #home-overview .wrapper .overview-body .contents-left {
-  width: 50%;
-  padding-right: 2rem;
-}
-.section #home-overview .wrapper .overview-body .contents-left p {
-  text-align: left;
-}
-.section #home-overview .wrapper .overview-body .contents-left .btn-stw {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  margin-top: 1rem;
-  text-align: center;
-  cursor: pointer;
-  border: 1px solid #000;
-}
-.section #home-overview .wrapper .overview-body figure {
-  width: 50%;
-}
-.section #home-overview .wrapper .overview-body figure svg {
+.section #home-overview .overview-body .contents-left p {
   display: block;
+  max-width: 40rem;
+  margin-block: 0 1em;
+  margin-inline: 0 0;
+  font-size: 2.375rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.05rem;
+  word-wrap: break-word;
+  vertical-align: baseline;
+  unicode-bidi: isolate;
+}
+.section #home-overview .overview-body .contents-left .btn-stw {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+.section #home-overview .overview-body .contents-left .btn-stw p {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.6em 2.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: -0.01rem;
+  border: 1px solid #252422;
+  border-radius: 1.6rem;
+  transition: color 0.3s ease-in-out;
+}
+.section #home-overview .overview-body .contents-left .btn-stw p:hover {
+  color: white;
+  background-color: #252422;
+}
+.section #home-overview .overview-body figure {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: 2/-1;
+  margin-block: 0;
+}
+.section #home-case-studies .cs-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  -moz-column-gap: 1.25rem;
+       column-gap: 1.25rem;
+}
+.section #home-case-studies .cs-items .item {
+  cursor: pointer;
+}
+.section #home-case-studies .cs-items .item a:hover {
+  text-decoration: underline;
+}
+.section #home-case-studies .cs-items h3 {
+  font-size: 1.375rem;
+  text-transform: uppercase;
+}
+.section #home-case-studies .cs-items p {
+  max-width: 13rem;
+  margin-top: 0.625rem;
+  font-size: 0.875rem;
+  line-height: 1.3;
+  text-transform: uppercase;
+  word-wrap: break-word;
+}
+.section #home-clients .row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 1rem;
+  font-size: 0.875rem;
+}
+.section #home-clients .row .col-3 {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: 3/4;
+}
+.section #home-clients h2 {
+  font-size: 2.625rem;
+  text-transform: uppercase;
+  letter-spacing: 0.01rem;
+}
+.section #home-clients .slide-img {
+  display: flex;
+  margin-block: 6rem 6rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+.section #home-clients .slide-img .google,
+.section #home-clients .slide-img .kfc,
+.section #home-clients .slide-img .wilson,
+.section #home-clients .slide-img .at,
+.section #home-clients .slide-img .patagonia {
+  flex: 0 0 auto;
   width: 100%;
-  height: auto;
+  max-width: 30rem;
+  padding-right: 4.6875rem;
+  word-wrap: break-word;
+  scroll-snap-align: start;
+}
+.section #home-clients .slide-img .google a,
+.section #home-clients .slide-img .kfc a,
+.section #home-clients .slide-img .wilson a,
+.section #home-clients .slide-img .at a,
+.section #home-clients .slide-img .patagonia a {
+  text-decoration: underline;
+}
+.section #home-clients .slide-img .google h3,
+.section #home-clients .slide-img .kfc h3,
+.section #home-clients .slide-img .wilson h3,
+.section #home-clients .slide-img .at h3,
+.section #home-clients .slide-img .patagonia h3 {
+  font-size: 1.375rem;
+  text-transform: uppercase;
+}
+.section #home-clients .slide-img .google p,
+.section #home-clients .slide-img .kfc p,
+.section #home-clients .slide-img .wilson p,
+.section #home-clients .slide-img .at p,
+.section #home-clients .slide-img .patagonia p {
+  font-size: 1.125rem;
+}
+.section #home-clients .slide-img .google .logo,
+.section #home-clients .slide-img .kfc .logo,
+.section #home-clients .slide-img .wilson .logo,
+.section #home-clients .slide-img .at .logo,
+.section #home-clients .slide-img .patagonia .logo {
+  margin-block: 1rem;
+  text-align: center;
+}
+.section #home-clients .slide-img .google .logo img,
+.section #home-clients .slide-img .kfc .logo img,
+.section #home-clients .slide-img .wilson .logo img,
+.section #home-clients .slide-img .at .logo img,
+.section #home-clients .slide-img .patagonia .logo img {
+  width: 285px;
+  height: 40px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: left;
+     object-position: left;
 }
 
 @media (width <= 1280px) {
