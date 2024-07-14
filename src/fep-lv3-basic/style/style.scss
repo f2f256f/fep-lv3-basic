@@ -462,6 +462,14 @@ figure {
     }
   }
 
+  #footer {
+    .footer-row {
+      figure {
+        width: 10%;
+      }
+    }
+  }
+
   #fixed-footer {
     position: fixed;
     bottom: 0;

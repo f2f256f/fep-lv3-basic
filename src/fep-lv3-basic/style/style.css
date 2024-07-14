@@ -411,6 +411,9 @@ figure path {
   font-size: 0.875rem;
   text-transform: uppercase;
 }
+.section #footer .footer-row figure {
+  width: 10%;
+}
 .section #fixed-footer {
   position: fixed;
   bottom: 0;
