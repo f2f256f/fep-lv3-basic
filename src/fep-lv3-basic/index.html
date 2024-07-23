@@ -9,9 +9,48 @@
     <title>BASIC/DEPT® | Digital Branding &amp; Product Design Agency</title>
     <link rel="stylesheet" href="./style/reset.css" />
     <link rel="stylesheet" href="./style/style.css" />
+    <script src="script/intersectionObserver.js" defer></script>
   </head>
   <body>
     <div class="noise"></div>
+
+    <div class="icon-btn">
+      <circle>
+        <span class="icon">
+          <svg
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+            xml:space="preserve"
+            viewBox="0 0 100 131.3"
+            part="acsb-trigger-icon-svg"
+            data-testid="base-icon-svg"
+            style="display: inline-flex">
+            <path
+              xmlns="http://www.w3.org/2000/svg"
+              d="M71.6 131.3c1 0 2.1-.3 3.1-.8 3.9-1.8 5.5-6.2 3.6-10.1 0 0-14.3-32.7-16.9-44.7-1-4.2-1.6-15.3-1.8-20.5 0-1.8 1-3.4 2.6-3.9l32-9.6c3.9-1 6.2-5.5 5.2-9.4-1-3.9-5.5-6.2-9.4-5.2 0 0-29.6 9.6-40.3 9.6-10.4 0-39.8-9.4-39.8-9.4-3.9-1-8.3.8-9.6 4.7-1.3 4.2 1 8.6 5.2 9.6l32 9.6c1.6.5 2.9 2.1 2.6 3.9-.3 5.2-.8 16.4-1.8 20.5-2.6 12-16.9 44.7-16.9 44.7-1.8 3.9 0 8.3 3.6 10.1 1 .5 2.1.8 3.1.8 2.9 0 5.7-1.6 6.8-4.4l15.3-31.2L64.8 127c1.3 2.7 3.9 4.3 6.8 4.3z"></path>
+            <circle
+              xmlns="http://www.w3.org/2000/svg"
+              cx="50.3"
+              cy="14.6"
+              r="14.6"
+              style="fill: #fff"></circle>
+          </svg>
+          <!-- <span class="active-icon">
+          <svg
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+            xml:space="preserve"
+            viewBox="0 0 105 79"
+            data-testid="base-icon-svg"
+            style="">
+            <path
+              xmlns="http://www.w3.org/2000/svg"
+              d="M12.6 38.9C6 31.9-4.7 42.6 2.3 49.2c8.7 9 17.3 18.3 26.3 27 4 3.7 7 3.7 10.7 0l63.6-63.3c6.7-7-3.7-17.6-10.7-10.7l-57.9 58-21.7-21.3z"></path>
+          </svg>
+        </span> -->
+        </span>
+      </circle>
+    </div>
 
     <!-- Section: Navigation -->
     <section class="section-nav">
@@ -306,36 +345,42 @@
             </p>
           </div>
         </div>
+        <!-- <div class="carousel-progress">
+          <span
+            class="carousel-progress-bar"
+            style="width: 60%; left: 10%"></span>
+        </div> -->
         <div class="divider"></div>
         <!-- divder 추후 슬라이더 라인으로 수정 필요 -->
       </div>
     </div>
+    <section class="animTrigger triggerd" id="sectionAnim">
+      <!-- Section: Home-spolight -->
+      <div class="section animTarget">
+        <div class="wrapper" id="home-spotlight">
+          <div class="spotlight-body">
+            <div class="contents-left">
+              <q>BASIC/DEPT® helps brands ● connect w/ culture</q>
+              <span class="spotlight-label">
+                Adweek
+                <strong>Agency Spotlight</strong>
 
-    <!-- Section: Home-spolight -->
-    <div class="section">
-      <div class="wrapper" id="home-spotlight">
-        <div class="spotlight-body">
-          <div class="contents-left">
-            <q>BASIC/DEPT® helps brands ● connect w/ culture</q>
-            <span class="spotlight-label">
-              Adweek
-              <strong>Agency Spotlight</strong>
-              <p>
-                <a class="spothlight-btn" href="#">About Us</a>
-              </p>
-            </span>
-          </div>
-          <div class="contents-video">
-            <video
-              src="https://cdn.sanity.io/files/8nn8fua5/production/e4a840ba8dfeded08ac4d0ba6e930be56fc68e3b.mp4"
-              muted
-              autoplay
-              loop></video>
+                <p>
+                  <a class="spothlight-btn" href="#">About Us</a>
+                </p>
+              </span>
+            </div>
+            <div class="contents-video">
+              <video
+                src="https://cdn.sanity.io/files/8nn8fua5/production/e4a840ba8dfeded08ac4d0ba6e930be56fc68e3b.mp4"
+                muted
+                autoplay
+                loop></video>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-
+    </section>
     <!-- Section: Home-news -->
     <div class="section">
       <div class="wrapper" id="home-news">

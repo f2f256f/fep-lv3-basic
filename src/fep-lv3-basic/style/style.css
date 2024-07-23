@@ -5,6 +5,10 @@ body {
   background-color: #f4f4f4;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .noise {
   position: fixed;
   inset: 0;
@@ -22,6 +26,41 @@ body {
   position: relative;
   z-index: 2;
   background: none;
+}
+
+.icon-btn :hover {
+  transition: 0.2s;
+  transform: scale(1.05);
+}
+.icon-btn circle {
+  position: fixed;
+  top: calc(100vh - 4.2rem);
+  left: 1.3%;
+  z-index: 1;
+  width: 3rem;
+  height: 3rem;
+  overflow: auto;
+  background-color: #252422;
+  border-radius: 80%;
+}
+.icon-btn circle .icon {
+  z-index: 1;
+}
+.icon-btn circle .icon svg {
+  position: absolute;
+  inset: 0;
+  max-width: 60%;
+  max-height: 60%;
+  margin: auto;
+  overflow: visible;
+  visibility: visible;
+  opacity: 1;
+}
+.icon-btn circle .icon svg circle {
+  fill: #f4f4f4 !important;
+}
+.icon-btn circle .icon svg path {
+  fill: #f4f4f4;
 }
 
 a {
@@ -105,6 +144,21 @@ figure path {
   color: #fff;
   text-transform: uppercase;
   cursor: pointer;
+}
+
+#sectionAnim {
+  background-color: #f4f4f4;
+}
+#sectionAnim.triggered::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  color: #f9cdcd;
+  content: "";
+  background-color: #252422;
 }
 
 .section {
@@ -239,6 +293,26 @@ figure path {
 .section #home-case-studies .cs-items .item a:hover {
   text-decoration: underline;
 }
+.section #home-case-studies .cs-items .item a .cs-imgs {
+  aspect-ratio: 6/7.5;
+  overflow: hidden;
+}
+.section #home-case-studies .cs-items .item a .cs-imgs :hover {
+  transition: 0.3s;
+  transform: scale(1);
+}
+.section #home-case-studies .cs-items .item a .cs-imgs img {
+  width: 100%;
+  height: 100%;
+  transition: 0.3s;
+  transform: scale(1.05);
+}
+.section #home-case-studies .cs-items .item a .cs-imgs video {
+  width: 100%;
+  height: 100%;
+  transition: 0.3s;
+  transform: scale(1.05);
+}
 .section #home-case-studies .cs-items h3 {
   font-size: 1.375rem;
   text-transform: uppercase;
@@ -262,6 +336,10 @@ figure path {
   grid-template-columns: subgrid;
   grid-column: 3/4;
 }
+.section #home-clients .row .col-3 span {
+  display: flex;
+  justify-content: end;
+}
 .section #home-clients h2 {
   font-size: 2.625rem;
   text-transform: uppercase;
@@ -273,6 +351,11 @@ figure path {
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.section #home-clients .slide-img::-webkit-scrollbar {
+  display: none;
 }
 .section #home-clients .slide-img .google,
 .section #home-clients .slide-img .kfc,
@@ -356,15 +439,32 @@ figure path {
   margin-top: 4.375rem;
 }
 .section #home-spotlight .spotlight-body .contents-left span .spothlight-btn {
+  position: relative;
   width: -moz-fit-content;
   width: fit-content;
   padding: 0.5em 2rem;
+  overflow: hidden;
   font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: -0.01rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  background-color: #f4f4f4;
   border: 1px solid #252422;
   border-radius: 1.6rem;
+}
+.section #home-spotlight .spotlight-body .contents-left span .spothlight-btn::before {
+  position: absolute;
+  inset: 0;
+  display: block;
+  content: "";
+  background-color: #252422;
+  transition: all 200ms ease-in;
+  transform: scale(100%, 0);
+  transform-origin: center bottom;
 }
 .section #home-news {
   margin-top: 10rem;
@@ -424,7 +524,7 @@ figure path {
   justify-content: space-between;
 }
 .section #home-news .news__items .item .news-body h5 {
-  max-width: 38rem;
+  max-width: 30rem;
   margin: 0;
   font-size: 2.2rem;
   font-weight: 500;

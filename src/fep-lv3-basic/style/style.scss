@@ -5,11 +5,17 @@ $text-color: #252422ff;
 $bg-color: #f4f4f4;
 $ft-color: #191918;
 $ft-txt-color: #5e5e5e;
+$js-bg-color: #252422ff;
+$js-txt-color: #f9cdcdff;
 
 body {
   font-family: 'Hanken Grotesk', sans-serif;
   color: $text-color;
   background-color: $bg-color;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 .noise {
@@ -29,6 +35,48 @@ body {
   position: relative;
   z-index: 2;
   background: none;
+}
+
+.icon-btn {
+  :hover {
+    transition: 0.2s;
+    transform: scale(1.05);
+  }
+
+  circle {
+    position: fixed;
+    top: calc(100vh - 4.2rem);
+    left: 1.3%;
+    z-index: 1;
+    width: 3rem;
+    height: 3rem;
+    overflow: auto;
+    background-color: #252422;
+    border-radius: 80%;
+
+    .icon {
+      z-index: 1;
+
+      svg {
+        position: absolute;
+        inset: 0;
+        max-width: 60%;
+        max-height: 60%;
+        margin: auto;
+        overflow: visible;
+        visibility: visible;
+        opacity: 1;
+
+        circle {
+          fill: $bg-color !important;
+        }
+
+        path {
+          fill: $bg-color;
+        }
+      }
+    }
+  }
 }
 
 a {
@@ -128,6 +176,28 @@ figure {
     color: #fff;
     text-transform: uppercase;
     cursor: pointer;
+  }
+}
+
+#sectionAnim {
+  background-color: $bg-color;
+
+  .animTarget {
+    // background-color: $js-bg-color;
+
+    // transition: filter 2s ease-in-out;
+  }
+
+  &.triggered::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    color: $js-txt-color;
+    content: '';
+    background-color: $js-bg-color;
   }
 }
 
@@ -275,6 +345,30 @@ figure {
           &:hover {
             text-decoration: underline;
           }
+
+          .cs-imgs {
+            aspect-ratio: 6 / 7.5;
+            overflow: hidden;
+
+            :hover {
+              transition: 0.3s;
+              transform: scale(1);
+            }
+
+            img {
+              width: 100%;
+              height: 100%;
+              transition: 0.3s;
+              transform: scale(1.05);
+            }
+
+            video {
+              width: 100%;
+              height: 100%;
+              transition: 0.3s;
+              transform: scale(1.05);
+            }
+          }
         }
       }
 
@@ -305,6 +399,11 @@ figure {
         display: grid;
         grid-template-columns: subgrid;
         grid-column: 3 / 4;
+
+        span {
+          display: flex;
+          justify-content: end;
+        }
       }
     }
 
@@ -320,6 +419,12 @@ figure {
       overflow-x: auto;
       scroll-snap-type: x mandatory;
       -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
 
       .google,
       .kfc,
@@ -359,6 +464,29 @@ figure {
         }
       }
     }
+
+    // .carousel-progress::before {
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+
+    //   width: 100%;
+    //   height: 100%;
+    //   margin: 11rem;
+
+    //   content: '';
+    //   background-color: currentcolor;
+    //   opacity: 0.25;
+
+    //   .carousel-progress-bar {
+    //     position: absolute;
+    //     top: 0;
+    //     z-index: 100;
+    //     display: block;
+    //     height: 0.2rem;
+    //     background-color: currentcolor;
+    //   }
+    // }
   }
 
   #home-spotlight {
@@ -391,87 +519,36 @@ figure {
           }
 
           .spothlight-btn {
+            position: relative;
             width: fit-content;
             padding: 0.5em 2rem;
+            overflow: hidden;
             font-size: 0.75rem;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: -0.01rem;
+            cursor: pointer;
+            user-select: none;
+            background-color: $bg-color;
             border: 1px solid $text-color;
             border-radius: 1.6rem;
+
+            &::before {
+              position: absolute;
+              inset: 0;
+              display: block;
+              content: '';
+              background-color: $text-color;
+              transition: all 200ms ease-in;
+              transform: scale(100%, 0);
+              transform-origin: center bottom;
+            }
           }
         }
       }
     }
   }
 
-  // #home-news {
-  //   margin-top: 10rem;
-
-  //   .title {
-  //     display: flex;
-  //     place-content: flex-end space-between;
-  //     align-items: flex-end;
-
-  //     h2 {
-  //       max-width: 250px;
-  //       font-size: 2.625rem;
-  //       line-height: 1;
-  //       text-transform: uppercase;
-  //       word-wrap: break-word;
-  //     }
-
-  //     p {
-  //       width: fit-content;
-  //       padding: 0.5em 2rem;
-  //       font-size: 0.75rem;
-  //       font-weight: 600;
-  //       text-transform: uppercase;
-  //       letter-spacing: -0.01rem;
-  //       border: 1px solid $text-color;
-  //       border-radius: 1.6rem;
-  //     }
-  //   }
-
-  //   .news {
-  //     &__items {
-  //       .item {
-  //         .item-body {
-  //           display: grid;
-  //           grid-template-columns: 1.5fr 2fr 1fr;
-  //           column-gap: 1.25rem;
-  //           margin-bottom: 5rem;
-  //         }
-
-  //         &:hover .news-body h5 {
-  //           text-decoration: underline;
-  //         }
-
-  //         .news-body {
-  //           h5 {
-  //             max-width: 38rem;
-  //             margin: 0;
-  //             font-size: 2.2rem;
-  //             font-weight: 500;
-  //             line-height: 1.1;
-  //             text-transform: uppercase;
-  //             word-wrap: break-word;
-  //           }
-
-  //           figure {
-  //             width: 1.875rem;
-  //             height: 1.875rem;
-  //           }
-
-  //           span {
-  //             font-size: 0.875rem;
-  //             text-transform: uppercase;
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
   #home-news {
     margin-top: 10rem;
 
@@ -535,13 +612,12 @@ figure {
 
           .news-body {
             .title-arrow {
-              // position: relative;
               display: flex;
               justify-content: space-between;
             }
 
             h5 {
-              max-width: 38rem;
+              max-width: 30rem;
               margin: 0;
               font-size: 2.2rem;
               font-weight: 500;
