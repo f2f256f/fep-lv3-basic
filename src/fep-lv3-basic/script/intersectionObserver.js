@@ -1,23 +1,18 @@
-let scrollOption = {
-  root: null,
-  rootMargin: '300px',
-  threshold: 0.4,
-};
+// Helper function to map a number from one range to another
+function mapRange(value, fromLow, fromHigh, toLow, toHigh) {
+  return toLow + (toHigh - toLow) * (value - fromLow) / (fromHigh - fromLow);
+}
 
-let scrollFunction = (scrollTargets) => {
-  scrollTargets.forEach((eachscrollTarget) => {
-    if (eachscrollTarget.isIntersecting) {
-      eachscrollTarget.target.classList.add('triggered');
-    } else {
-      eachscrollTarget.target.classList.remove('triggered');
-    }
-  });
-};
+// Event listener for scroll events
+window.addEventListener('scroll', function() {
+  const section = document.getElementById('sectionAnim');
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
 
-let scroll = new IntersectionObserver(scrollFunction, scrollOption);
+  // Calculate the percentage of how far we've scrolled
+  const scrollPercent = (scrollTop / docHeight);
 
-let elems = document.querySelectorAll('.animTrigger');
-
-elems.forEach((eachElem) => {
-  scroll.observe(eachElem);
-});
+  // Map the scroll percentage to a color value
+  const red = Math.min(255, Math.max(0, mapRange(scrollPercent, 0, 1, 255, 0)));
+  const green = Math.min(255, Math.max(0, mapRange(scrollPercent, 0, 1, 0, 255)));
+  const blue = Math.min(255, Math.max(0, mapRange(scrollPercent, 0, 1, 0,

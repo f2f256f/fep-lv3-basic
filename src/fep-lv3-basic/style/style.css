@@ -36,7 +36,7 @@ html {
   position: fixed;
   top: calc(100vh - 4.2rem);
   left: 1.3%;
-  z-index: 1;
+  z-index: 1000;
   width: 3rem;
   height: 3rem;
   overflow: auto;
@@ -146,21 +146,6 @@ figure path {
   cursor: pointer;
 }
 
-#sectionAnim {
-  background-color: #f4f4f4;
-}
-#sectionAnim.triggered::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  color: #f9cdcd;
-  content: "";
-  background-color: #252422;
-}
-
 .section {
   padding-inline: 0;
   margin-inline: 0;
@@ -174,7 +159,8 @@ figure path {
   z-index: 0;
   width: 100%;
   height: 100vh;
-  overflow: hidden;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .section .video-container .video {
   position: relative;
@@ -182,9 +168,12 @@ figure path {
   left: 0;
   z-index: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .section .video-container .video video {
+  display: block;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
